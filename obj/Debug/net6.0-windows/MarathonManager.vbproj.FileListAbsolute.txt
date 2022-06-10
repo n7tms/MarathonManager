@@ -1,0 +1,17 @@
+C:\MyData\dev\MarathonManager\bin\Debug\net6.0-windows\MarathonManager.exe
+C:\MyData\dev\MarathonManager\bin\Debug\net6.0-windows\MarathonManager.deps.json
+C:\MyData\dev\MarathonManager\bin\Debug\net6.0-windows\MarathonManager.runtimeconfig.json
+C:\MyData\dev\MarathonManager\bin\Debug\net6.0-windows\MarathonManager.dll
+C:\MyData\dev\MarathonManager\bin\Debug\net6.0-windows\MarathonManager.pdb
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.vbproj.AssemblyReference.cache
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.Form1.resources
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.vbproj.GenerateResource.cache
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.AssemblyInfoInputs.cache
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.AssemblyInfo.vb
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.vbproj.CoreCompileInputs.cache
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.dll
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\refint\MarathonManager.dll
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.pdb
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.genruntimeconfig.cache
+C:\MyData\dev\MarathonManager\obj\Debug\net6.0-windows\ref\MarathonManager.dll
