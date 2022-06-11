@@ -34,7 +34,11 @@ Public Class clsDatabaseSQLite
 
     End Sub
 
-    Public Function dbSelect(sSelectStatement As String) As arra
+
+    'You're working right here
+    'Figure out a way to get the results of a select statement into a list of something to 
+    'pass back to the calling function.
+    Public Function dbSelect(sSelectStatement As String) As
 
 
     End Function
