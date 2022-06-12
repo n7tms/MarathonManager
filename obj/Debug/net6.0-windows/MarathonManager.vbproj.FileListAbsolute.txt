@@ -30,3 +30,4 @@ D:\Dev\MarathonManager\obj\Debug\net6.0-windows\refint\MarathonManager.dll
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.pdb
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.genruntimeconfig.cache
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\ref\MarathonManager.dll
+D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.Form1.resources

@@ -38,7 +38,22 @@ Public Class clsDatabaseSQLite
     'You're working right here
     'Figure out a way to get the results of a select statement into a list of something to 
     'pass back to the calling function.
-    Public Function dbSelect(sSelectStatement As String) As
+    Public Function dbSelect(sSelectStatement As String) As DataTable
+        Dim table As New DataTable
+
+        Using sqlconn As New SQLite.SQLiteConnection(ConnectionString)
+            Dim cmd As New SQLite.SQLiteCommand(sSelectStatement, sqlconn)
+            sqlconn.Open()
+            Dim rdr As SQLite.SQLiteDataReader = cmd.ExecuteReader
+            Using rdr
+                Do
+                    rdr.Read()
+
+                Loop
+            End Using
+
+        End Using
+        table.Columns.Add("dosage", GetType(Object))
 
 
     End Function

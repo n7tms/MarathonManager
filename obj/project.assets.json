@@ -1157,19 +1157,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Todd\\.nuget\\packages\\": {}
+    "C:\\Users\\tmsmi\\.nuget\\packages\\": {},
+    "D:\\Program Files\\MVS\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyData\\dev\\MarathonManager\\MarathonManager.vbproj",
+      "projectUniqueName": "D:\\Dev\\MarathonManager\\MarathonManager.vbproj",
       "projectName": "MarathonManager",
-      "projectPath": "C:\\MyData\\dev\\MarathonManager\\MarathonManager.vbproj",
-      "packagesPath": "C:\\Users\\Todd\\.nuget\\packages\\",
-      "outputPath": "C:\\MyData\\dev\\MarathonManager\\obj\\",
+      "projectPath": "D:\\Dev\\MarathonManager\\MarathonManager.vbproj",
+      "packagesPath": "C:\\Users\\tmsmi\\.nuget\\packages\\",
+      "outputPath": "D:\\Dev\\MarathonManager\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files\\MVS\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Todd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tmsmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
