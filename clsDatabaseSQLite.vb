@@ -35,27 +35,28 @@ Public Class clsDatabaseSQLite
     End Sub
 
 
-    'You're working right here
-    'Figure out a way to get the results of a select statement into a list of something to 
-    'pass back to the calling function.
-    Public Function dbSelect(sSelectStatement As String) As DataTable
-        Dim table As New DataTable
+    Public Function dbSelect(sSelectStatement As String) As List(Of Dictionary(Of String, Object))
+        Dim lstDataset As New List(Of Dictionary(Of String, Object))
 
         Using sqlconn As New SQLite.SQLiteConnection(ConnectionString)
             Dim cmd As New SQLite.SQLiteCommand(sSelectStatement, sqlconn)
             sqlconn.Open()
             Dim rdr As SQLite.SQLiteDataReader = cmd.ExecuteReader
-            Using rdr
-                Do
-                    rdr.Read()
+            While rdr.Read()
+                'rdr.FieldCount
+                'rdr.GetName(i)   -- get the column name
 
-                Loop
-            End Using
+                Dim dctRow As New Dictionary(Of String, Object)
+                For i As Integer = 0 To rdr.FieldCount - 1
+                    'MsgBox(rdr.GetName(i) + ": " + rdr.GetValue(i).ToString)
 
+                    dctRow.Add(rdr.GetName(i), rdr.GetValue(i))
+                Next
+                lstDataset.Add(dctRow)
+            End While
         End Using
-        table.Columns.Add("dosage", GetType(Object))
 
-
+        Return lstDataset
     End Function
 
     Public Sub dbUpdate(sUpdateStatement As String)

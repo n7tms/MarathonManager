@@ -26,6 +26,7 @@ Partial Class frmTest
         Me.txtInsert = New System.Windows.Forms.TextBox()
         Me.lblInsert = New System.Windows.Forms.Label()
         Me.butInsert = New System.Windows.Forms.Button()
+        Me.butBrowse = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'butCreateDatabase
@@ -39,34 +40,45 @@ Partial Class frmTest
         '
         'txtInsert
         '
-        Me.txtInsert.Location = New System.Drawing.Point(122, 86)
+        Me.txtInsert.Location = New System.Drawing.Point(54, 86)
         Me.txtInsert.Name = "txtInsert"
-        Me.txtInsert.Size = New System.Drawing.Size(100, 23)
+        Me.txtInsert.Size = New System.Drawing.Size(253, 23)
         Me.txtInsert.TabIndex = 1
+        Me.txtInsert.Text = "select first from testTable"
         '
         'lblInsert
         '
         Me.lblInsert.AutoSize = True
-        Me.lblInsert.Location = New System.Drawing.Point(56, 91)
+        Me.lblInsert.Location = New System.Drawing.Point(12, 89)
         Me.lblInsert.Name = "lblInsert"
-        Me.lblInsert.Size = New System.Drawing.Size(36, 15)
+        Me.lblInsert.Size = New System.Drawing.Size(28, 15)
         Me.lblInsert.TabIndex = 2
-        Me.lblInsert.Text = "Insert"
+        Me.lblInsert.Text = "SQL"
         '
         'butInsert
         '
-        Me.butInsert.Location = New System.Drawing.Point(254, 83)
+        Me.butInsert.Location = New System.Drawing.Point(313, 86)
         Me.butInsert.Name = "butInsert"
         Me.butInsert.Size = New System.Drawing.Size(75, 23)
         Me.butInsert.TabIndex = 3
         Me.butInsert.Text = "Insert"
         Me.butInsert.UseVisualStyleBackColor = True
         '
+        'butBrowse
+        '
+        Me.butBrowse.Location = New System.Drawing.Point(394, 86)
+        Me.butBrowse.Name = "butBrowse"
+        Me.butBrowse.Size = New System.Drawing.Size(75, 23)
+        Me.butBrowse.TabIndex = 4
+        Me.butBrowse.Text = "Browse"
+        Me.butBrowse.UseVisualStyleBackColor = True
+        '
         'frmTest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 165)
+        Me.ClientSize = New System.Drawing.Size(481, 208)
+        Me.Controls.Add(Me.butBrowse)
         Me.Controls.Add(Me.butInsert)
         Me.Controls.Add(Me.lblInsert)
         Me.Controls.Add(Me.txtInsert)
@@ -82,4 +94,5 @@ Partial Class frmTest
     Friend WithEvents txtInsert As TextBox
     Friend WithEvents lblInsert As Label
     Friend WithEvents butInsert As Button
+    Friend WithEvents butBrowse As Button
 End Class
