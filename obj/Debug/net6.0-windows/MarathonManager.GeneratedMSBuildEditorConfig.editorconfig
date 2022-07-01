@@ -1,6 +1,6 @@
 is_global = true
 build_property.ApplicationManifest = My Project\app.manifest
-build_property.StartupObject = MarathonManager.frmTest
+build_property.StartupObject = MarathonManager.frmMain
 build_property.ApplicationDefaultFont = 
 build_property.ApplicationHighDpiMode = 
 build_property.ApplicationUseCompatibleTextRendering = 
