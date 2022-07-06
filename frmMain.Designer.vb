@@ -26,6 +26,7 @@ Partial Class frmMain
         Me.MarathonManagerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecentEventsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
@@ -34,6 +35,7 @@ Partial Class frmMain
         Me.DocumentationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dlgOpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,7 +50,7 @@ Partial Class frmMain
         '
         'MarathonManagerToolStripMenuItem
         '
-        Me.MarathonManagerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.ToolStripMenuItem1, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ExitToolStripMenuItem})
+        Me.MarathonManagerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.RecentEventsToolStripMenuItem, Me.ToolStripMenuItem1, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ExitToolStripMenuItem})
         Me.MarathonManagerToolStripMenuItem.Name = "MarathonManagerToolStripMenuItem"
         Me.MarathonManagerToolStripMenuItem.Size = New System.Drawing.Size(121, 20)
         Me.MarathonManagerToolStripMenuItem.Text = "Marathon Manager"
@@ -64,6 +66,12 @@ Partial Class frmMain
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OpenToolStripMenuItem.Text = "Open"
+        '
+        'RecentEventsToolStripMenuItem
+        '
+        Me.RecentEventsToolStripMenuItem.Name = "RecentEventsToolStripMenuItem"
+        Me.RecentEventsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecentEventsToolStripMenuItem.Text = "Recent Events"
         '
         'ToolStripMenuItem1
         '
@@ -112,6 +120,14 @@ Partial Class frmMain
         Me.TestToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.TestToolStripMenuItem.Text = "Test"
         '
+        'dlgOpenFile
+        '
+        Me.dlgOpenFile.CheckFileExists = False
+        Me.dlgOpenFile.FileName = "NewEventDatabase"
+        Me.dlgOpenFile.Filter = "Databases (*.db)|*.db|All files (*.*)|*.*"
+        Me.dlgOpenFile.RestoreDirectory = True
+        Me.dlgOpenFile.Title = "Select New Dabase Name"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -140,4 +156,6 @@ Partial Class frmMain
     Friend WithEvents DocumentationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecentEventsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents dlgOpenFile As OpenFileDialog
 End Class
