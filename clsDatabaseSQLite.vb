@@ -12,9 +12,13 @@ Public Class clsDatabaseSQLite
         dbFileName = sDBFileName
         ConnectionString = String.Format("Data Source = {0}", dbFileName)
 
-        If Not duplicateDatabase(sDBFileName) Then
-            Me.createDatabase()
-        End If
+        Dim SqlConn As New SQLite.SQLiteConnection(ConnectionString)
+        SqlConn.Open()
+        SqlConn.Close()
+
+        'If Not duplicateDatabase(sDBFileName) Then
+        '    Me.createDatabase()
+        'End If
     End Sub
 
     Public Sub createDatabase()
