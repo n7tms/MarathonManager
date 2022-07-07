@@ -136,11 +136,20 @@
             );"
         db.dbUpdate(sStmt)
 
-
+        Return True
 
     End Function
 
+    '==================================================================================
 
+
+    '==================================================================================
+    ' Remove invalid characters from a potential/propsed filename
+    '
+    Public Function ReplaceInvalidCharacters(sFilename As String, Optional sReplacementChar As String = "") As String
+        Dim illegalInFilename As New System.Text.RegularExpressions.Regex("[\\/:*?""<>|]")
+        Return illegalInFilename.Replace(sFilename, sReplacementChar)
+    End Function
     '==================================================================================
 
 

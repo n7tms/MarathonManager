@@ -1,7 +1,25 @@
 ﻿Module modNotes
     'Next
-    ' . build the high-level structure of the app
-    ' . . the main forms
+    ' ???
+
+
+    'The app will use a variety of open windows
+    ' . main control
+    ' . sitings
+    ' . traffic
+    ' . assignments
+    ' . reporting and/or participant status screens
+
+
+    'I think I need separate databases
+    ' . ...A people database which contains ...
+    '       . Persons
+    '       . Volunteers
+    '       . Participants
+    '       . Users
+    ' . but i'm not sure I can have two databases open at the same time and "join"ing the tables
+    ' . how does a SQLite project work?
+
 
 
 

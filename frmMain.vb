@@ -19,9 +19,17 @@
     End Sub
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        If dlgOpenFile.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
-            MsgBox(dlgOpenFile.FileName)
-            CreateNewDatabase(dlgOpenFile.FileName)
-        End If
+        Dim dlg As New frmNewEvent
+        dlg.ShowDialog()
+
+
+    End Sub
+
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+        Dim dlg As New frmTest
+        dlg.ShowDialog()
+
+
+
     End Sub
 End Class

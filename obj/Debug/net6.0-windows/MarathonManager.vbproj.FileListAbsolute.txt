@@ -34,3 +34,4 @@ D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.Form1.resources
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.frmAbout.resources
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.frmMain.resources
 D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.frmLogin.resources
+D:\Dev\MarathonManager\obj\Debug\net6.0-windows\MarathonManager.frmNewEvent.resources
