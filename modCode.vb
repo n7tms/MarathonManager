@@ -24,24 +24,24 @@
         '== Create the tables ==
         'Persons Table
         sStmt = "CREATE TABLE Persons (
-                PersonID	INTEGER UNIQUE,
-	            Firstname	TEXT,
-	            Lastname	TEXT,
-                Gender	TEXT,
-	            Birthdate	TEXT,
-                Phone	TEXT,
-	            Textable	INTEGER,
-                Email	TEXT,
-	            Street1	TEXT,
-	            Street2	TEXT,
-	            City	TEXT,
-                State	TEXT,
-	            Zipcode	TEXT,
-                EContactName	TEXT,
-	            EContactPhone	TEXT,
-                Callsign TEXT,
-	            PRIMARY KEY(PersonID AUTOINCREMENT)
-            )"
+                PersonID INTEGER UNIQUE, 
+                Firstname TEXT, 
+                Lastname TEXT, 
+                Gender TEXT, 
+                Birthdate TEXT, 
+                Phone TEXT, 
+                Textable INTEGER, 
+                Email TEXT,
+                Street1 TEXT, 
+                Street2 TEXT, 
+                City TEXT, 
+                State TEXT, 
+                Zipcode TEXT, 
+                EContactName TEXT, 
+                EContactPhone TEXT, 
+                Callsign TEXT, 
+                PRIMARY KEY(PersonID AUTOINCREMENT)
+            );"
         db.dbUpdate(sStmt)
 
         'Users Table
@@ -71,7 +71,7 @@
 	            PersonID	INTEGER UNIQUE,
 	            EventID	INTEGER,
 	            RaceID	INTEGER,
-	            Bib	INTEGER
+	            Bib	INTEGER,
                 PRIMARY KEY(PersonID AUTOINCREMENT)
             )"
         db.dbUpdate(sStmt)
