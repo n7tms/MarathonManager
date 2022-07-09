@@ -5,8 +5,27 @@
     End Sub
 
     Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
-        Dim frm As New frmTest
-        frm.Show()
+        'Dim frm As New frmTest
+        'frm.Show()
+
+        'My.Settings.MasterDatabasePath = "Dawn"
+        'My.Settings.Save()
+        MsgBox(My.Settings.MasterDatabasePath)
+
+        'Debug.WriteLine("Begin here")
+
+        'Dim exeConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None)
+        'Debug.WriteLine(exeConfig.FilePath)
+
+        'Dim localConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal)
+        'Debug.WriteLine(localConfig.FilePath)
+
+        'Dim roamingConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoaming)
+        'Debug.WriteLine(roamingConfig.FilePath)
+
+
+
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -31,5 +50,10 @@
 
 
 
+    End Sub
+
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+        Dim dlg As New frmSettings
+        dlg.ShowDialog()
     End Sub
 End Class

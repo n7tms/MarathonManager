@@ -15,7 +15,6 @@
     ' . ...A people database which contains ...
     '       . Persons
     '       . Volunteers
-    '       . Participants
     '       . Users
     ' . but i'm not sure I can have two databases open at the same time and "join"ing the tables
     ' . how does a SQLite project work?
@@ -46,6 +45,21 @@
     'For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
     '        ListView1.Items.Add(New ListViewItem({ds.Tables(0).Rows(i).Item(0).ToString(), ds.Tables(0).Rows(i).Item(1).ToString(), ds.Tables(0).Rows(i).Item(2).ToString()}))
     '    Next
+
+
+
+    '================================================================================
+    ' For Posperity
+    '================================================================================
+    '
+    'ConfigurationErrorsException: Unrecognized configuration section system.diagnostics
+    ' I needed to add a section to the config file so that the system.diagnositics section would be recognized.
+    ' (https://stackoverflow.com/questions/57078166/net-core-using-system-diagnostics-in-app-config)
+    '
+    '<configSections>
+    '   <section name = "system.diagnostics" type="System.Diagnostics.DiagnosticsConfigurationHandler"/>
+    '</configSections>
+    '---------------------------------------------------------------------------------
 
 
 End Module

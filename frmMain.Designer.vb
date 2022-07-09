@@ -31,17 +31,17 @@ Partial Class frmMain
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DocumentationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.dlgOpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SitingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolunteersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MessagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DocumentationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dlgOpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -101,6 +101,43 @@ Partial Class frmMain
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SitingsToolStripMenuItem, Me.LogToolStripMenuItem, Me.StatusToolStripMenuItem, Me.VolunteersToolStripMenuItem, Me.MessagesToolStripMenuItem})
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'SitingsToolStripMenuItem
+        '
+        Me.SitingsToolStripMenuItem.Name = "SitingsToolStripMenuItem"
+        Me.SitingsToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.SitingsToolStripMenuItem.Text = "Sitings"
+        '
+        'LogToolStripMenuItem
+        '
+        Me.LogToolStripMenuItem.Name = "LogToolStripMenuItem"
+        Me.LogToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.LogToolStripMenuItem.Text = "Log"
+        '
+        'StatusToolStripMenuItem
+        '
+        Me.StatusToolStripMenuItem.Name = "StatusToolStripMenuItem"
+        Me.StatusToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.StatusToolStripMenuItem.Text = "Status"
+        '
+        'VolunteersToolStripMenuItem
+        '
+        Me.VolunteersToolStripMenuItem.Name = "VolunteersToolStripMenuItem"
+        Me.VolunteersToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.VolunteersToolStripMenuItem.Text = "Volunteers"
+        '
+        'MessagesToolStripMenuItem
+        '
+        Me.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem"
+        Me.MessagesToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.MessagesToolStripMenuItem.Text = "Messages"
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocumentationToolStripMenuItem, Me.AboutToolStripMenuItem})
@@ -111,13 +148,13 @@ Partial Class frmMain
         'DocumentationToolStripMenuItem
         '
         Me.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DocumentationToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.DocumentationToolStripMenuItem.Text = "Documentation"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'TestToolStripMenuItem
@@ -133,43 +170,6 @@ Partial Class frmMain
         Me.dlgOpenFile.Filter = "Databases (*.db)|*.db|All files (*.*)|*.*"
         Me.dlgOpenFile.RestoreDirectory = True
         Me.dlgOpenFile.Title = "Select New Dabase Name"
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SitingsToolStripMenuItem, Me.LogToolStripMenuItem, Me.StatusToolStripMenuItem, Me.VolunteersToolStripMenuItem, Me.MessagesToolStripMenuItem})
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
-        'SitingsToolStripMenuItem
-        '
-        Me.SitingsToolStripMenuItem.Name = "SitingsToolStripMenuItem"
-        Me.SitingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SitingsToolStripMenuItem.Text = "Sitings"
-        '
-        'LogToolStripMenuItem
-        '
-        Me.LogToolStripMenuItem.Name = "LogToolStripMenuItem"
-        Me.LogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LogToolStripMenuItem.Text = "Log"
-        '
-        'StatusToolStripMenuItem
-        '
-        Me.StatusToolStripMenuItem.Name = "StatusToolStripMenuItem"
-        Me.StatusToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.StatusToolStripMenuItem.Text = "Status"
-        '
-        'VolunteersToolStripMenuItem
-        '
-        Me.VolunteersToolStripMenuItem.Name = "VolunteersToolStripMenuItem"
-        Me.VolunteersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.VolunteersToolStripMenuItem.Text = "Volunteers"
-        '
-        'MessagesToolStripMenuItem
-        '
-        Me.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem"
-        Me.MessagesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MessagesToolStripMenuItem.Text = "Messages"
         '
         'frmMain
         '
