@@ -1,6 +1,7 @@
 ﻿Module modNotes
     'Next
-    ' ???
+    ' create new event
+    ' figure out if two database (people & events) is going to work
 
 
     'The app will use a variety of open windows
@@ -16,6 +17,8 @@
     '       . Persons
     '       . Volunteers
     '       . Users
+    ' . ...And an events database that contains the information for the current event
+    '
     ' . but i'm not sure I can have two databases open at the same time and "join"ing the tables
     ' . how does a SQLite project work?
 
