@@ -56,4 +56,10 @@
         Dim dlg As New frmSettings
         dlg.ShowDialog()
     End Sub
+
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Run Initialization Code
+        InitializeApp()
+
+    End Sub
 End Class

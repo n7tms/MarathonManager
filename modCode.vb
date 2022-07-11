@@ -2,10 +2,102 @@
     'A collection of common code used or referenced throughout the project
 
     'Static Variables
-
+    Public sDBPath As String = Nothing
+    Public Const iCURRENTDBVERSION = 1
 
 
     'Other code
+
+    '==================================================================================
+    ' Initialize App
+    '
+    Public Sub InitializeApp()
+        'Check for the presence of the Settings database
+
+        ' If there is an argument on the commandline, use it.
+        If Environment.GetCommandLineArgs().Count > 1 Then
+            Dim aVars As Array
+            aVars = Environment.GetCommandLineArgs
+
+            sDBPath = aVars(1)
+        End If
+
+        ' Check for the default name in the working directory.
+        If sDBPath Is Nothing Then
+            If My.Computer.FileSystem.FileExists("MarathonManagerSettings.db") Then
+                sDBPath = Environment.CurrentDirectory + "\MarathonManagerSettings.db"
+            End If
+        End If
+
+        ' Ask the user to locate it OR create a new one with defaults
+        If sDBPath Is Nothing Then
+            Dim iResult As Integer
+            iResult = MsgBox("Unable to locate the master database (MarathonManagerSettings.db). " + vbCrLf + vbCrLf +
+                             "'YES' to create a new one;" + vbCrLf +
+                             "'NO' to select an existing one.",
+                             vbYesNoCancel Or vbExclamation, "Missing Master Database")
+            If iResult = Windows.Forms.DialogResult.No Then
+                Dim dlgFileOpen As New OpenFileDialog
+                dlgFileOpen.FileName = "MarathonManagerSettings.db"
+                dlgFileOpen.Title = "Specify Master Database"
+                dlgFileOpen.Filter = "db files (*.db)|*.db|All files (*.*)|*.*"
+                If dlgFileOpen.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+                    sDBPath = dlgFileOpen.FileName
+                End If
+            ElseIf iResult = Windows.Forms.DialogResult.Yes Then
+                sDBPath = "MarathonManagerSettings.db"
+                CreateMasterDatabase()
+            Else
+                End
+            End If
+        End If
+
+        'MsgBox("Using: " + sDBPath, vbOKOnly Or vbInformation, "DB Path")
+
+        'Check for the correct database version
+        Dim iDBVersion As Integer
+        iDBVersion = GetDBVersion()
+        If iDBVersion <> iCURRENTDBVERSION Then
+            MsgBox("Wrong DB Version!" + vbCrLf + vbCrLf + "Found: " + iDBVersion.ToString + vbCrLf + "Looking for: " + iCURRENTDBVERSION.ToString, vbOKOnly Or vbExclamation, "Oops!")
+
+            '**** TODO: Handle the case where the wrong version is found.
+        End If
+
+
+        'Load the settings from the settings database
+
+    End Sub
+
+    Private Function GetDBVersion() As Integer
+        Dim db As New clsDatabaseSQLite(sDBPath)
+        Dim sStmt As String
+        Dim rList As New List(Of Dictionary(Of String, Object))
+
+        sStmt = "SELECT SettingValue FROM Settings WHERE SettingName = 'DBVersion' LIMIT 1"
+        rList = db.dbSelect(sStmt)
+        Return rList(0)("SettingValue")
+    End Function
+
+    Private Sub CreateMasterDatabase()
+        Dim sStmt As String
+
+        '== Create the file ==
+        Dim db As New clsDatabaseSQLite("MarathonManagerSettings.db")
+
+        sStmt = "CREATE TABLE Settings (SettingID INTEGER UNIQUE, SettingName TEXT, SettingValue TEXT, PRIMARY KEY(SettingID AUTOINCREMENT))"
+        db.dbUpdate(sStmt)
+
+        sStmt = "CREATE TABLE Recents (RecentID INTEGER UNIQUE,	EventName TEXT,	DBPath TEXT, PRIMARY KEY(RecentID AUTOINCREMENT))"
+        db.dbUpdate(sStmt)
+
+        ' Add the settings fields
+        sStmt = "INSERT INTO Settings (SettingName, SettingValue) VALUES ('DBVersion','1')"
+        db.dbUpdate(sStmt)
+    End Sub
+    '==================================================================================
+
+
+
 
     '==================================================================================
     ' Create a new database

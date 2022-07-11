@@ -24,12 +24,15 @@ Partial Class frmSettings
     Private Sub InitializeComponent()
         Me.tabSettings = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtDBVersion = New System.Windows.Forms.TextBox()
+        Me.lblDBVersion = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.butCancel = New System.Windows.Forms.Button()
         Me.butSave = New System.Windows.Forms.Button()
-        Me.lblMasterDatabase = New System.Windows.Forms.Label()
-        Me.txtMasterDatabasePath = New System.Windows.Forms.TextBox()
-        Me.butOpenDBFile = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtTestField1 = New System.Windows.Forms.TextBox()
+        Me.txtTestField2 = New System.Windows.Forms.TextBox()
         Me.tabSettings.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -46,9 +49,12 @@ Partial Class frmSettings
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.butOpenDBFile)
-        Me.TabPage1.Controls.Add(Me.txtMasterDatabasePath)
-        Me.TabPage1.Controls.Add(Me.lblMasterDatabase)
+        Me.TabPage1.Controls.Add(Me.txtTestField2)
+        Me.TabPage1.Controls.Add(Me.txtTestField1)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.txtDBVersion)
+        Me.TabPage1.Controls.Add(Me.lblDBVersion)
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -56,6 +62,23 @@ Partial Class frmSettings
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Global"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txtDBVersion
+        '
+        Me.txtDBVersion.Enabled = False
+        Me.txtDBVersion.Location = New System.Drawing.Point(115, 310)
+        Me.txtDBVersion.Name = "txtDBVersion"
+        Me.txtDBVersion.Size = New System.Drawing.Size(100, 23)
+        Me.txtDBVersion.TabIndex = 1
+        '
+        'lblDBVersion
+        '
+        Me.lblDBVersion.AutoSize = True
+        Me.lblDBVersion.Location = New System.Drawing.Point(10, 313)
+        Me.lblDBVersion.Name = "lblDBVersion"
+        Me.lblDBVersion.Size = New System.Drawing.Size(99, 15)
+        Me.lblDBVersion.TabIndex = 0
+        Me.lblDBVersion.Text = "Database Version:"
         '
         'TabPage2
         '
@@ -85,30 +108,37 @@ Partial Class frmSettings
         Me.butSave.Text = "Save Settings"
         Me.butSave.UseVisualStyleBackColor = True
         '
-        'lblMasterDatabase
+        'Label1
         '
-        Me.lblMasterDatabase.AutoSize = True
-        Me.lblMasterDatabase.Location = New System.Drawing.Point(30, 35)
-        Me.lblMasterDatabase.Name = "lblMasterDatabase"
-        Me.lblMasterDatabase.Size = New System.Drawing.Size(94, 15)
-        Me.lblMasterDatabase.TabIndex = 0
-        Me.lblMasterDatabase.Text = "Master Database"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(54, 41)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 15)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Test Field 1:"
         '
-        'txtMasterDatabasePath
+        'Label2
         '
-        Me.txtMasterDatabasePath.Location = New System.Drawing.Point(130, 32)
-        Me.txtMasterDatabasePath.Name = "txtMasterDatabasePath"
-        Me.txtMasterDatabasePath.Size = New System.Drawing.Size(344, 23)
-        Me.txtMasterDatabasePath.TabIndex = 1
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(54, 86)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 15)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Test Field 2:"
         '
-        'butOpenDBFile
+        'txtTestField1
         '
-        Me.butOpenDBFile.Location = New System.Drawing.Point(480, 31)
-        Me.butOpenDBFile.Name = "butOpenDBFile"
-        Me.butOpenDBFile.Size = New System.Drawing.Size(30, 23)
-        Me.butOpenDBFile.TabIndex = 2
-        Me.butOpenDBFile.Text = "..."
-        Me.butOpenDBFile.UseVisualStyleBackColor = True
+        Me.txtTestField1.Location = New System.Drawing.Point(127, 38)
+        Me.txtTestField1.Name = "txtTestField1"
+        Me.txtTestField1.Size = New System.Drawing.Size(100, 23)
+        Me.txtTestField1.TabIndex = 4
+        '
+        'txtTestField2
+        '
+        Me.txtTestField2.Location = New System.Drawing.Point(127, 83)
+        Me.txtTestField2.Name = "txtTestField2"
+        Me.txtTestField2.Size = New System.Drawing.Size(100, 23)
+        Me.txtTestField2.TabIndex = 5
         '
         'frmSettings
         '
@@ -132,7 +162,10 @@ Partial Class frmSettings
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents butCancel As Button
     Friend WithEvents butSave As Button
-    Friend WithEvents butOpenDBFile As Button
-    Friend WithEvents txtMasterDatabasePath As TextBox
-    Friend WithEvents lblMasterDatabase As Label
+    Friend WithEvents txtDBVersion As TextBox
+    Friend WithEvents lblDBVersion As Label
+    Friend WithEvents txtTestField2 As TextBox
+    Friend WithEvents txtTestField1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class
