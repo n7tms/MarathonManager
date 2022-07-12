@@ -72,6 +72,7 @@ Public Class clsDatabaseSQLite
 
     End Sub
 
+
     Private Function duplicateDatabase(sFileName As String) As Boolean
         Return System.IO.File.Exists(sFileName)
     End Function

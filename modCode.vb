@@ -1,4 +1,8 @@
-﻿Module modCode
+﻿Imports System.IO
+Imports System.Text
+Imports System.Security.Cryptography
+
+Module modCode
     'A collection of common code used or referenced throughout the project
 
     'Static Variables
@@ -93,6 +97,18 @@
         ' Add the settings fields
         sStmt = "INSERT INTO Settings (SettingName, SettingValue) VALUES ('DBVersion','1')"
         db.dbUpdate(sStmt)
+
+        'Persons Table
+        sStmt = "CREATE TABLE Persons (PersonID INTEGER UNIQUE, Firstname TEXT, Lastname TEXT, Gender TEXT, Birthdate TEXT, Phone TEXT, Textable INTEGER, Email TEXT, Street1 TEXT, Street2 TEXT, City TEXT, State TEXT, Zipcode TEXT, EContactName TEXT, EContactPhone TEXT, Callsign TEXT, PRIMARY KEY(PersonID AUTOINCREMENT));"
+        db.dbUpdate(sStmt)
+
+        'Local Users Table
+        sStmt = "CREATE TABLE LocalUsers (UserID INTEGER, Username TEXT, Password TEXT, Permission INTEGER)"
+        db.dbUpdate(sStmt)
+
+        'Add a local admin user
+        sStmt = "INSERT INTO LocalUsers (Username, Password, Permission) VALUEs ('admin', 'admin', 1)"
+        db.dbUpdate(sStmt)
     End Sub
     '==================================================================================
 
@@ -114,30 +130,10 @@
         '**** TODO: This should probably be done as a transaction
 
         '== Create the tables ==
-        'Persons Table
-        sStmt = "CREATE TABLE Persons (
-                PersonID INTEGER UNIQUE, 
-                Firstname TEXT, 
-                Lastname TEXT, 
-                Gender TEXT, 
-                Birthdate TEXT, 
-                Phone TEXT, 
-                Textable INTEGER, 
-                Email TEXT,
-                Street1 TEXT, 
-                Street2 TEXT, 
-                City TEXT, 
-                State TEXT, 
-                Zipcode TEXT, 
-                EContactName TEXT, 
-                EContactPhone TEXT, 
-                Callsign TEXT, 
-                PRIMARY KEY(PersonID AUTOINCREMENT)
-            );"
-        db.dbUpdate(sStmt)
+
 
         'Users Table
-        sStmt ="CREATE TABLE Users (
+        sStmt = "CREATE TABLE Users (
 	            UserID	INTEGER,
 	            PersonID	INTEGER,
 	            Username	TEXT,
@@ -241,6 +237,51 @@
     Public Function ReplaceInvalidCharacters(sFilename As String, Optional sReplacementChar As String = "") As String
         Dim illegalInFilename As New System.Text.RegularExpressions.Regex("[\\/:*?""<>|]")
         Return illegalInFilename.Replace(sFilename, sReplacementChar)
+    End Function
+    '==================================================================================
+
+
+    '==================================================================================
+    ' Encrypt/Decript user passwords
+    '
+    Public Function Encrypt(clearText As String) As String
+        Dim EncryptionKey As String = "DHEDHB7EJWLAD72"
+        Dim clearBytes As Byte() = Encoding.Unicode.GetBytes(clearText)
+        Using encryptor As Aes = Aes.Create()
+            Dim pdb As New Rfc2898DeriveBytes(EncryptionKey, New Byte() {&H49, &H76, &H61, &H6E, &H20, &H4D,
+             &H65, &H64, &H76, &H65, &H64, &H65,
+             &H76})
+            encryptor.Key = pdb.GetBytes(32)
+            encryptor.IV = pdb.GetBytes(16)
+            Using ms As New MemoryStream()
+                Using cs As New CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write)
+                    cs.Write(clearBytes, 0, clearBytes.Length)
+                    cs.Close()
+                End Using
+                clearText = Convert.ToBase64String(ms.ToArray())
+            End Using
+        End Using
+        Return clearText
+    End Function
+
+    Public Function Decrypt(cipherText As String) As String
+        Dim EncryptionKey As String = "DHEDHB7EJWLAD72"
+        Dim cipherBytes As Byte() = Convert.FromBase64String(cipherText)
+        Using encryptor As Aes = Aes.Create()
+            Dim pdb As New Rfc2898DeriveBytes(EncryptionKey, New Byte() {&H49, &H76, &H61, &H6E, &H20, &H4D,
+             &H65, &H64, &H76, &H65, &H64, &H65,
+             &H76})
+            encryptor.Key = pdb.GetBytes(32)
+            encryptor.IV = pdb.GetBytes(16)
+            Using ms As New MemoryStream()
+                Using cs As New CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write)
+                    cs.Write(cipherBytes, 0, cipherBytes.Length)
+                    cs.Close()
+                End Using
+                cipherText = Encoding.Unicode.GetString(ms.ToArray())
+            End Using
+        End Using
+        Return cipherText
     End Function
     '==================================================================================
 

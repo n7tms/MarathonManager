@@ -1,7 +1,7 @@
 ﻿Module modNotes
     'Next
     ' create new event
-    ' figure out if two database (people & events) is going to work
+    ' 
 
 
     'The app will use a variety of open windows

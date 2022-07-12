@@ -8,22 +8,6 @@
         'Dim frm As New frmTest
         'frm.Show()
 
-        'My.Settings.MasterDatabasePath = "Dawn"
-        'My.Settings.Save()
-        MsgBox(My.Settings.MasterDatabasePath)
-
-        'Debug.WriteLine("Begin here")
-
-        'Dim exeConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None)
-        'Debug.WriteLine(exeConfig.FilePath)
-
-        'Dim localConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal)
-        'Debug.WriteLine(localConfig.FilePath)
-
-        'Dim roamingConfig As System.Configuration.Configuration = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoaming)
-        'Debug.WriteLine(roamingConfig.FilePath)
-
-
 
 
     End Sub
@@ -60,6 +44,18 @@
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Run Initialization Code
         InitializeApp()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        TextBox1.Text = Encrypt(TextBox1.Text.Trim)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text = Decrypt(TextBox1.Text.Trim)
+
 
     End Sub
 End Class
